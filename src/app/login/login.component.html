@@ -1,0 +1,26 @@
+
+<div id="login-page-container">
+
+  <div id="jukebox-logo-container">
+    <img id="jukebox-img" src="../../assets/jukebox.png"/>
+  </div>
+
+
+  <div id="login-controls-container">
+
+    <label for="input-email">Email: </label>  <br>
+    <input #input_email name="inputemail" type="text" placeholder="enter your company id...">
+
+    <br><br>
+
+    <label for="input-pwd" >Password: </label> <br>
+    <input #input_pwd name="password" type="password" placeholder="enter your jukeBx Password...">
+
+    <br><br>
+
+    <button id="login-btn" (click)="loginUser(input_email.value, input_pwd.value)">Login</button>
+
+  </div>
+
+
+</div>
