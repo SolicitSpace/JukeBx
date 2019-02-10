@@ -18,17 +18,39 @@ app.use(function(req, res, next) {
 
 // Api's
 // GET: get's all employees records
-app.get ("/getAllEmployees/:email/:password", function (req, res) {
+app.get ("/getAllEmployees", function (req, res) {
    
     mongoClient.connect(url, { useNewUrlParser: true }, function (err, db) {
         if (err) throw err;
       
         var dbo = db.db("jukeboxdb");
         var query = {email:req.params.email, password:req.params.password};
-        console.log(query)
+
         dbo.collection("employees").find(query).toArray(function(err, result) {
             if (err) throw err;
-            // console.log(result);
+         
+            res.send(result);
+            db.close();
+        });
+        
+    });
+
+});
+
+
+
+// GET: get's employees details as per forwarded email and password
+app.get ("/getEmployees/:email/:password", function (req, res) {
+   
+    mongoClient.connect(url, { useNewUrlParser: true }, function (err, db) {
+        if (err) throw err;
+      
+        var dbo = db.db("jukeboxdb");
+        var query = {email:req.params.email, password:req.params.password};
+
+        dbo.collection("employees").find(query).toArray(function(err, result) {
+            if (err) throw err;
+         
             res.send(result);
             db.close();
         });

@@ -23,9 +23,33 @@ export class LoginComponent implements OnInit {
 
   loginUser(email, password): void {
       
-    this.loginService.getAllEmployees(email, password).subscribe((response) => console.log(response));
+  	let employeeDetails = [];
+
+    this.loginService.getAllEmployees(email, password).subscribe((response) => (() => {
+
+
+    	if (Object.keys(response).length > 0) {
+    		
+	    	employeeDetails["name"] = response[0]["name"];
+	    	employeeDetails["designation"] = response[0]["designation"];
+	    	employeeDetails["email"] = response[0]["email"];
+	    	employeeDetails["password"] = response[0]["password"];
+
+	    	console.log(employeeDetails);
+		}
+
+		else {
+
+			console.log("Invalid login details");
+		}
+
+    })());
     
   }
+
+
+
+
 
 
   

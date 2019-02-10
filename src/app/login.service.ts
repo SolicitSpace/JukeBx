@@ -7,16 +7,17 @@ import { HttpClient } from '@angular/common/http'
 })
 export class LoginService {
 
-  url :string =  "http://127.0.0.1:8081/getAllEmployees";
+  apiUrl :string =  "http://127.0.0.1:8081";
   // url :string =  "http://api.github.com/users/koushikkothagal";
   
 
   constructor(private http: HttpClient) { }
 
   
+
   getAllEmployees (email, password) {
-    
-    return this.http.get(this.url + "/");
+  
+    return this.http.get(this.apiUrl + "/getEmployees/" + email + "/" + password);
   }
 
   

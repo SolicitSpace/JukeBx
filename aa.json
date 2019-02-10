@@ -1,0 +1,4 @@
+{"_id":{"$oid":"5c5e746af669e72408960125"},"name":"Aditya Patil","email":"aditya@customtechnologies.biz","password":"1234","designation":"Programmer"}
+{"_id":{"$oid":"5c5e9c72e7295a4104550c35"},"name":"Aanand yaadav","email":"aanand@customtechnologies.biz","password":"1234","designation":"Programmer"}
+{"_id":{"$oid":"5c5e9c81e7295a4104550c36"},"name":"Avinash Prajapati","email":"avinash@customtechnologies.biz","password":"1234","designation":"Programmer"}
+{"_id":{"$oid":"5c5e9ca5e7295a4104550c37"},"name":"Mithun Pangal","email":"mithun@customtechnologies.biz","password":"1234","designation":"CTO"}
